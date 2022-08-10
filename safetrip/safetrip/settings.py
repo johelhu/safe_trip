@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'shapeeditor',
 ]
 
 MIDDLEWARE = [
@@ -121,3 +122,29 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGIN_URL='/admin/login/'
+
+# First point map extent area [longitude, latitude]
+#       +++++++++
+#       +       +
+#       +  Map  +
+#       +       +
+# --->  @++++++++
+
+# Second point map extent area [longitude, latitude]
+# ++++++++@ <---
+# +       +
+# +  Map  +
+# +       +
+# +++++++++
+
+SHAPEEDITOR_MAP_EXTENT_AREA = [
+    [-84.43669241118701, 9.726525930153954],
+    [-83.72894500499169, 9.99625455768836]]
+
+# Center by default on load [longitude, latitude]
+SHAPEEDITOR_MAP_CENTER = [-84.1027104, 9.865107]
+
+# Router service for shape generation request (This one is a free demo)
+SHAPEEDITOR_ROUTING_MACHINE_URL = "http://router.project-osrm.org/route/v1/driving/" 
