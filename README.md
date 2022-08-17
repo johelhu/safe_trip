@@ -9,6 +9,7 @@ SoftWare de mapas y rutas de buses escolares
     $ source venv/*/activate
 
 ## correr servidor de desarrollo
-
+    
+    $ source venv/*/activate
     $ cd safetrip
     $ ./manage.py runserver
